@@ -35,9 +35,28 @@
 .video-overlay-content{
   margin-top: 50px;
 }
-
+.video-overlay-right{
+  padding: 0px 15px;
+}
 .video-overlay-content img{
   border-radius: 9999999px;
+}
+
+.home-right-text h1{
+  font-size: 56px;
+  font-weight: 800;
+  color: rgb(193, 122, 24);
+}
+.home-right-text-fp{
+  font-size: 26px;
+  font-weight: 500;
+}
+.home-right-text-sp{
+  font-size: 18px;
+}
+.home-buttons-fbt:hover img {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease; 
 }
 
 @media (max-width: 767px){
@@ -45,9 +64,14 @@
     flex-direction: column;
   }
   .home-buttons{
-    margin-top: 30px;
+    margin-top: 5px;
   }
   .video-overlay-content img{
     margin-top: 100px;
+  }
+  .home-right-text h1{
+    font-size: 36px;
+    font-weight: 800;
+    color: rgb(193, 122, 24);
   }
 }

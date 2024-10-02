@@ -16,18 +16,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFFFFF; /* White background for elegance */
+  background: transparent;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding: 10px 20px;
   height: 4.5rem;
   position: sticky; /* Make the navbar sticky */
   top: 0; /* Stick to the top */
   z-index: 1001; /* Ensure the navbar stays on top of other content */
   border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .logo a {
-  color: #3E2723; /* Dark brown for logo */
+  color: #fff; /* Dark brown for logo */
   font-size: 1.5em; /* Slightly larger logo */
   text-decoration: none;
   font-weight: 700; /* Bold weight for visibility */
@@ -42,7 +44,7 @@ body {
 
 .nav-links li a {
   margin: 0 20px; /* Increased spacing for a more breathable look */
-  color: #3E2723; /* Dark brown for text */
+  color: #fff; /* Dark brown for text */
   cursor: pointer;
   font-size: 1.1em; /* Slightly larger font size */
   text-decoration: none;

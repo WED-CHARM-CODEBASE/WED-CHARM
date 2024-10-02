@@ -28,7 +28,7 @@
     background-color: rgba(0, 0, 0, 0.4); /* Adjust the alpha for dimming (0.5 = 50% opacity) */
     z-index: 1; /* Place it above the video */
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 

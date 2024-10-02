@@ -1,0 +1,86 @@
+/* Wrapper for spacing */
+.wrapper {
+    height: 15vh;
+  }
+  
+  /* Main container for wedding planning form */
+  .plan-wedding {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    min-height: 85vh;
+  }
+  
+  .plan-wedding h1 {
+    font-size: 46px;
+    font-weight: 700;
+    color: rgb(193, 122, 24);
+  }
+  
+  .plan-wedding p {
+    font-size: 13px;
+    margin-top: 3px;
+  }
+  
+  /* Form layout using grid */
+  .plan-wedding-form {
+    margin-top: 20px;
+    display: grid;
+    grid-gap: 20px;
+  }
+  
+  /* Input field style */
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .input {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Responsive grid layout for various screen sizes */
+  
+  /* Mobile: 1 field per row */
+  @media (max-width: 767px) {
+    .plan-wedding h1 {
+      font-size: 30px;
+    }
+    .plan-wedding {
+      padding: 0px 15px;
+    }
+    .input-field {
+      width: 90vw;
+    }
+    .plan-wedding-form {
+      grid-template-columns: 1fr;
+    }
+    .wrapper{
+        height: 12vh;
+    }
+  }
+  
+  /* Tablet: 2 fields per row */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .plan-wedding-form {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .input-field {
+      width: 100%;
+    }
+  }
+  
+  /* Laptop/Desktop: 3 fields per row */
+  @media (min-width: 1024px) {
+    .plan-wedding-form {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .input-field {
+      width: 100%;
+    }
+  }
+  

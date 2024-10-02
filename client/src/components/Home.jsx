@@ -49,7 +49,7 @@ const Home = () => {
             <Button mt={5} colorScheme="orange" className="home-buttons-fbt">
               Explore <img width='27' src={chevron_right_icon} alt=">" />
             </Button>
-            <Button mt={5} ml={10} colorScheme="gray" onClick={()=>{navigate("/login")}}>
+            <Button mt={5} ml={10} colorScheme="gray" onClick={()=>{navigate("/plan-wedding")}}>
               Plan Wedding <img width='27' src={add_icon} alt="+" />
             </Button>
           </div>

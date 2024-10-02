@@ -25,7 +25,7 @@ body {
   height: 4rem;
   position: sticky; /* Make the navbar sticky */
   top: 0; /* Stick to the top */
-  z-index: 1001; /* Ensure the navbar stays on top of other content */
+  z-index: 9999999; /* Ensure the navbar stays on top of other content */
   border-radius: 12px; /* Rounded corners */
   background-color: rgba(255, 255, 255, 0.15);
 }

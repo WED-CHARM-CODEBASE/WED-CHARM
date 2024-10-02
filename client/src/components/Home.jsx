@@ -1,9 +1,9 @@
 import React from "react";
 import "./Home.css";
 import { Button } from "@chakra-ui/react";
+import mandapVideo from "../assets/home_video.mp4";
 import couple_image1 from '../assets/couple_image1.webp';
 import couple_image2 from '../assets/couple_image2.webp';
-import couple_image3 from '../assets/couple_image3.webp';
 import couple_image4 from '../assets/couple_image4.webp';
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
   }
 
   const randomPic = () => {
-    const pictures = [couple_image1, couple_image2, couple_image3, couple_image4]; // Use an array
+    const pictures = [couple_image1, couple_image2,couple_image4]; // Use an array
     const randomIndex = Math.floor(Math.random() * pictures.length);
     return pictures[randomIndex];
   }
@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <video
-        src={require("../assets/home_video.mp4")}
+        src={mandapVideo}
         autoPlay
         loop
         muted

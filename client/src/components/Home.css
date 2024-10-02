@@ -36,6 +36,9 @@
   margin-top: 50px;
 }
 
+.video-overlay-content img{
+  border-radius: 9999999px;
+}
 
 @media (max-width: 767px){
   .video-overlay{
@@ -43,5 +46,8 @@
   }
   .home-buttons{
     margin-top: 30px;
+  }
+  .video-overlay-content img{
+    margin-top: 100px;
   }
 }

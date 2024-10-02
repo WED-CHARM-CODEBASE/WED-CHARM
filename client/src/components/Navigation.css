@@ -67,7 +67,7 @@ body {
 .menu-icon .line {
   width: 25px;
   height: 3px;
-  background-color: #3e2723; /* Dark color for menu icon */
+  background-color: #fff; /* Dark color for menu icon */
   margin: 4px 0;
 }
 

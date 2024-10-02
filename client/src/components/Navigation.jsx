@@ -9,10 +9,11 @@ const Navigation = () => {
 
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
+      
     };
 
   return (
-    <div>
+    <div className="pre-navbar">
       <nav className="navbar">
         <div className="logo"><Link to="/">Wed Charm</Link></div>
         <div className={`menu-icon ${isMenuOpen ? "open" : ""}`} onClick={toggleMenu}>
@@ -21,6 +22,7 @@ const Navigation = () => {
           <div className="line"></div>
         </div>
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+        <li><Link to = '/' onClick={toggleMenu}>Home</Link></li>
           <li><Link to = '/login' onClick={toggleMenu}>Login</Link></li>
         </ul>
       </nav>

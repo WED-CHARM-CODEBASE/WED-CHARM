@@ -1,0 +1,73 @@
+Primary Color: Orange (#FF5722)
+Secondary Color: Peach (#FFCCBC)
+Accent Color: Dark Orange (#E64A19)
+Text Color: Dark Brown (#3E2723)
+
+
+
+
+
+
+
+
+1. User Authentication & Authorization
+Description: Implement Google OAuth for secure user authentication, allowing users to log in using their Google accounts.
+Components:
+Login Page: A dedicated login page where users can sign in using their Google account.
+Registration Process: Automatic user registration upon first login through Google.
+Session Management: Use JWT to maintain user sessions and handle logouts.
+Error Handling: Display error messages for failed login attempts or authorization issues.
+2. User Profile Management
+Description: Allow users to manage their profiles, including personal information and preferences related to wedding planning.
+Components:
+Profile Page: A section where users can view and edit their profile details (name, email, preferences).
+Password Management: Option to change passwords or link additional accounts in the future.
+Profile Picture Upload: Option for users to upload a profile picture.
+Settings: Users can manage notification preferences and account settings.
+3. Wedding Details Input Form
+Description: A comprehensive form for users to input essential wedding details that will be used to generate itineraries.
+Components:
+Input Fields: Include fields for wedding date, location, number of guests, theme, budget, and other preferences.
+Multi-step Form: Consider using a multi-step form to enhance user experience by breaking the input process into manageable sections.
+Validation: Implement real-time validation to ensure users provide correct and complete information before submission.
+Preview Option: Allow users to preview their input before final submission.
+4. Itinerary Generation
+Description: Utilize the GPT API to generate personalized wedding itineraries based on the user-provided details.
+Components:
+API Integration: Send user inputs to the GPT API and receive itinerary suggestions.
+Customizable Itineraries: Users can modify the generated itineraries according to their preferences.
+Display Options: Present the generated itinerary in a user-friendly format, possibly using cards or sections for each part of the wedding.
+5. Wedding Plan Management
+Description: Allow users to manage their wedding plans through create, read, update, and delete (CRUD) operations.
+Components:
+Dashboard: A central hub where users can view all their wedding plans.
+CRUD Functionality: Users can create new wedding plans, view existing plans, edit details, and delete unwanted plans.
+Status Tracking: Users can mark tasks as completed or in progress to help manage their wedding planning timeline.
+Notifications: Alerts for important dates or milestones related to their wedding plans.
+6. PDF Generation
+Description: Enable users to download or print their wedding itineraries as PDFs for easy reference.
+Components:
+PDF Button: A dedicated button on the itinerary page that triggers the PDF generation process.
+Layout Design: Create a well-structured layout for the PDF to ensure it is easy to read and includes all necessary details.
+Download Option: Users can either download the PDF to their device or print directly from the web application.
+Customization: Allow users to customize certain aspects of the PDF, such as title or included sections.
+7. Protected Routes
+Description: Implement route protection to restrict access to certain parts of the application, ensuring only authenticated users can access sensitive information.
+Components:
+Middleware: Create middleware in Express to check for valid JWT tokens before allowing access to protected routes.
+Redirects: Redirect unauthorized users to the login page when they attempt to access protected routes.
+Role-Based Access Control (Optional): Depending on your app's complexity, you can implement role-based access control for different user types (e.g., admin vs. regular user).
+8. Responsive UI
+Description: Design the user interface to be responsive, ensuring it looks great on various devices (desktops, tablets, and smartphones).
+Components:
+CSS Framework: Use frameworks like Bootstrap or Tailwind CSS to facilitate responsive design.
+Media Queries: Implement media queries to adjust styles based on screen size.
+Fluid Grids and Flexible Images: Use relative units (e.g., percentages) for layout elements and ensure images scale appropriately.
+Testing: Regularly test the application on different devices and screen sizes to ensure optimal user experience.
+9. Search Functionality
+Description: Enable users to search for saved wedding plans and itineraries quickly.
+Components:
+Search Bar: A search input field where users can type keywords related to their wedding plans.
+Filtering Options: Provide options to filter results based on different criteria (e.g., date, location, status).
+Dynamic Search Results: Implement real-time search results that update as the user types, improving usability.
+No Results Handling: Display a friendly message if no matching plans are found, encouraging users to try different keywords.

@@ -1,96 +1,108 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    padding: 10px 20px;
-    height: 4.5rem;
-    position: sticky; /* Make the navbar sticky */
-    top: 0; /* Stick to the top */
-    z-index: 100; /* Ensure the navbar stays on top of other content */
-  }
-  
-  .logo a {
-    color: white;
-    font-size: 1.3em;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
+  margin: 0;
+  padding: 0;
+  background-color: #FAF3E0; /* Light beige background */
+}
+
+.pre-navbar {
+  padding: 10px 15px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000; /* Ensure this stays on top */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF; /* White background for elegance */
+  padding: 10px 20px;
+  height: 4.5rem;
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top */
+  z-index: 1001; /* Ensure the navbar stays on top of other content */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.logo a {
+  color: #3E2723; /* Dark brown for logo */
+  font-size: 1.5em; /* Slightly larger logo */
+  text-decoration: none;
+  font-weight: 700; /* Bold weight for visibility */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  margin: 0 20px; /* Increased spacing for a more breathable look */
+  color: #3E2723; /* Dark brown for text */
+  cursor: pointer;
+  font-size: 1.1em; /* Slightly larger font size */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-links li a:hover {
+  color: #FF6F61; /* Coral hover color */
+  text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon .line {
+  width: 25px;
+  height: 3px;
+  background-color: #3E2723; /* Dark color for menu icon */
+  margin: 4px 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
   .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li a {
-    margin: 0 15px;
-    color: white;
-    cursor: pointer;
-    font-size: 1em;
-    text-decoration: none;
-  }
-  
-  .nav-links li a:hover {
-    color: #33f5f5;
-  }
-  
-  .menu-icon {
-    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background-color: #FFFFFF; /* Keep the same background */
+    width: 100%;
     flex-direction: column;
-    cursor: pointer;
+    align-items: center;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 999; /* Ensure mobile nav is above */
+    border-radius: 0 0 12px 12px; /* Rounded corners at the bottom */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
-  
-  .menu-icon .line {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
+
+  .nav-links.active {
+    opacity: 1;
+    height: auto; /* Change to auto for dynamic height */
   }
-  
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    .nav-links {
-      position: absolute;
-      top: 65px;
-      right: 0;
-      background-color: #000;
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-      opacity: 0;
-      height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease-in-out;
-      z-index: 999;
-    }
-  
-    .nav-links.active {
-      opacity: 1;
-      height: 100vh;
-    }
-  
-    .menu-icon {
-      display: flex;
-    }
-  
-    .nav-links li {
-      padding: 15px 0;
-      width: 100%;
-      text-align: center;
-      border-bottom: 1px solid #555;
-    }
-  
-    .nav-links li:last-child {
-      border-bottom: none;
-    }
+
+  .menu-icon {
+    display: flex;
   }
-  
+
+  .nav-links li {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee; /* Light border for separation */
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+}

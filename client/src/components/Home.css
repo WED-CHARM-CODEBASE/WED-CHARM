@@ -1,7 +1,7 @@
 .home-page {
   position: relative;
   overflow: hidden; /* Prevents overflow */
-  height: 100vh; /* Full height of the viewport */
+  min-height: 100vh; /* Full height of the viewport */
   width: 100%; /* Full width of the viewport */
   margin: 0; /* Remove any default margin */
   padding: 0; /* Remove any default padding */
@@ -45,6 +45,7 @@
 }
 .video-overlay-content img {
   border-radius: 9999999px;
+  width: 700px;
 }
 
 .home-right-text h1 {
@@ -73,6 +74,7 @@
   }
   .video-overlay-content img {
     margin-top: 60px;
+    width: 300px;
   }
   .home-right-text h1 {
     font-size: 36px;

@@ -4,6 +4,7 @@ import { Input } from '@chakra-ui/react';
 import { Select } from '@chakra-ui/react';
 import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
 import ReactSelect from 'react-select';
+import { Button } from '@chakra-ui/react';
 
 const PlanWedding = () => {
   const entertainmentOptions = [
@@ -152,24 +153,24 @@ const PlanWedding = () => {
               </Stack>
             </RadioGroup>
           </div>
+          <div className="input-field">
+            <label htmlFor="transportation-for-guests">
+              Trnsportation For Guests :{' '}
+            </label>
+            <RadioGroup id="transportation-for-guests">
+              <Stack direction="row" className="accomodation-needed-stack">
+                <Radio value="yes">Yes</Radio>
+                <Radio value="no">No</Radio>
+              </Stack>
+            </RadioGroup>
+          </div>
         </form>
+        <Button mt={10} mb={10} colorScheme="orange">
+              Generate Plan 
+        </Button>
       </div>
     </div>
   );
 };
 
 export default PlanWedding;
-
-// needed fields
-// weddingDate,
-// No of Celebration days
-// location,
-// numberOfGuests,
-// budget,
-// ceremonyPreference,
-// weddingTheme,
-// accommodationsNeeded,
-// cateringType,
-// entertainmentPreferences,
-// transportationForGuests,
-// specialNeedsForGuests,

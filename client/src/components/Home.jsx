@@ -35,7 +35,7 @@ const Home = () => {
       </video>
       <div className="video-overlay">
         <div className="video-overlay-content">
-          <img width="700" src={randomPic()} alt="Wedding Scene" />
+          <img src={randomPic()} alt="Wedding Scene" />
         </div>
         <div className="video-overlay-right">
           <div className="home-right-text">

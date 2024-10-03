@@ -1,6 +1,6 @@
 /* Wrapper for spacing */
 .wrapper {
-  height: 5vh;
+  height: 15vh;
 }
 
 /* Main container for wedding planning form */
@@ -66,7 +66,7 @@
     grid-template-columns: 1fr;
   }
   .wrapper {
-    height: 3vh;
+    height: 12vh;
   }
 }
 

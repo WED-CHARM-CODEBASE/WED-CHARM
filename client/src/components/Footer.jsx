@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import Logo from '../assets/logo_dark.png';
 import { Link } from 'react-router-dom';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { RiLinkedinFill } from 'react-icons/ri';
 
 const Footer = () => {
   return (
@@ -25,13 +25,39 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className='footer-links'>
+          <div className="footer-links">
             <h2 className="text-dark">Our Team</h2>
-            <div className="text-dark">
-            <a target='_blank' href="https://www.linkedin.com/in/khushi-chaudhary-01383622b/"><img src={LinkedInIcon} alt="Li" /> Khushi Chaudhary</a>
+            <div className="text-dark d-flex">
+              <a
+                className="d-flex align-items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/khushi-chaudhary-01383622b/"
+                style={{ textDecoration: 'none', color: 'black' }} // Optional styling
+              >
+                <RiLinkedinFill
+                  color="black"
+                  size={20}
+                  style={{ marginRight: '5px' }}
+                />
+                Khushi Chaudhary
+              </a>
             </div>
-            <div className="text-dark">
-            <a target='_blank' href="https://www.linkedin.com/in/nitish-kumar-899086221/"><img src={LinkedInIcon} alt="Li" /> Nitish Kumar</a>
+            <div className="text-dark d-flex">
+              <a
+                className="d-flex align-items-center" // Optional styling for alignment
+                target="_blank"
+                rel="noopener noreferrer" // Security recommendation
+                href="https://www.linkedin.com/in/nitish-kumar-899086221/"
+                style={{ textDecoration: 'none', color: 'black' }} // Ensures styling consistency
+              >
+                <RiLinkedinFill
+                  color="black"
+                  size={20}
+                  style={{ marginRight: '5px' }}
+                />
+                Nitish Kumar
+              </a>
             </div>
           </div>
         </div>

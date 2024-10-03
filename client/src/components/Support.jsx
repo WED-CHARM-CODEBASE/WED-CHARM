@@ -1,7 +1,8 @@
 import React from 'react';
+import './Support.css';
 
 const Support = () => {
-  return <div>Support</div>;
+  return <div className="support-page">Support</div>;
 };
 
 export default Support;

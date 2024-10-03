@@ -11,13 +11,12 @@ body {
   width: 100%;
   z-index: 1000; /* Ensure this stays on top */
 }
-.logo{
+.logo {
   display: flex;
   justify-content: start;
   align-items: center;
-  
 }
-.logo img{
+.logo img {
   margin-right: 5px;
 }
 .navbar {

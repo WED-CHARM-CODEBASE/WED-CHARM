@@ -166,7 +166,7 @@ const PlanWedding = () => {
           </div>
         </form>
         <Button mt={10} mb={10} colorScheme="orange">
-              Generate Plan 
+          Generate Plan
         </Button>
       </div>
     </div>

@@ -24,12 +24,17 @@
   justify-content: center;
   font-size: 16px;
   font-weight: bold;
-  border-top: 1px solid #3E2723;
+  border-top: 1px solid #3e2723;
 }
-.footer-links  div ,.footer-links h2{
+.footer-links div,
+.footer-links h2 {
   height: 5vh;
 }
-.footer-links h2{
+.footer-links h2 {
   font-size: 18px;
   font-weight: bold;
+}
+.d-flex {
+  display: flex;
+  vertical-align: middle;
 }

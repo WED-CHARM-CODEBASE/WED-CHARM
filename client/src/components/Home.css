@@ -1,75 +1,80 @@
 .home-page {
-    position: relative;
-    overflow: hidden; /* Prevents overflow */
-    height: 100vh; /* Full height of the viewport */
-    width: 100%; /* Full width of the viewport */
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
-  }
-  
-  .video-background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%; /* Set to 100% of parent */
-    height: 100%; /* Set to 100% of parent */
-    object-fit: cover; /* This property ensures the video covers the entire area */
-    transform: translate(-50%, -50%); /* Center the video */
-    z-index: -1; /* Keep video in the background */
-    filter: blur(2px);
-  }
-
-  .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Adjust the alpha for dimming (0.5 = 50% opacity) */
-    z-index: 1; /* Place it above the video */
-    display: flex;
-    justify-content: start;
-    align-items: center;
+  position: relative;
+  overflow: hidden; /* Prevents overflow */
+  height: 100vh; /* Full height of the viewport */
+  width: 100%; /* Full width of the viewport */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
 }
 
-.video-overlay-content{
+.video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Set to 100% of parent */
+  height: 100%; /* Set to 100% of parent */
+  object-fit: cover; /* This property ensures the video covers the entire area */
+  transform: translate(-50%, -50%); /* Center the video */
+  z-index: -1; /* Keep video in the background */
+  filter: blur(2px);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Adjust the alpha for dimming (0.5 = 50% opacity) */
+  z-index: 1; /* Place it above the video */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.video-overlay-content {
   margin-top: 50px;
 }
-.video-overlay-right{
+.video-overlay-right {
   padding: 0px 15px;
 }
-.video-overlay-content img{
+.video-overlay-content img {
   border-radius: 9999999px;
 }
 
-.home-right-text h1{
+.home-right-text h1 {
   font-size: 56px;
   font-weight: 800;
   color: rgb(193, 122, 24);
 }
-.home-right-text-fp{
+.home-right-text-fp {
   font-size: 26px;
   font-weight: 500;
 }
-.home-right-text-sp{
+.home-right-text-sp {
   font-size: 18px;
 }
 .home-buttons-fbt:hover img {
   transform: rotate(90deg);
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 767px){
-  .video-overlay{
+@media (max-width: 767px) {
+  .video-overlay {
     flex-direction: column;
   }
-  .home-buttons{
+  .home-buttons {
     margin-top: 5px;
   }
-  .video-overlay-content img{
+  .video-overlay-content img {
     margin-top: 60px;
   }
-  .home-right-text h1{
+  .home-right-text h1 {
     font-size: 36px;
     font-weight: 800;
     color: rgb(193, 122, 24);

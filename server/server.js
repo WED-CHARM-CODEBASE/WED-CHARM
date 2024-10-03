@@ -1,2 +1,2 @@
 // Welcome to Server Side Code.
-console.log("Hello Server");
+console.log('Hello Server');

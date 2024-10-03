@@ -4,12 +4,16 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "format": "prettier --write \"**/*.{js,json,md}\""
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
   }
 }

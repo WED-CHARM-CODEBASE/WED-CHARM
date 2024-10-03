@@ -1,42 +1,42 @@
 .footer {
-    background-color: #fff; 
-    padding: 20px 0; /* Top and bottom padding */
-    position: relative; /* Relative positioning */
-    bottom: 0; /* Stick to the bottom */
-    width: 100%;
-    height: 30vh; /* Full width */
+  background-color: #fff;
+  padding: 20px 0; /* Top and bottom padding */
+  position: relative; /* Relative positioning */
+  bottom: 0; /* Stick to the bottom */
+  width: 100%;
+  height: 30vh; /* Full width */
 }
 
 .footer-container {
-    display: flex; /* Flexbox for layout */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-    max-width: 1200px; /* Max width for large screens */
-    margin: 0 auto; /* Center on larger screens */
-    padding: 0 20px; /* Side padding */
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  max-width: 1200px; /* Max width for large screens */
+  margin: 0 auto; /* Center on larger screens */
+  padding: 0 20px; /* Side padding */
+  flex-wrap: wrap; /* Wrap items on smaller screens */
 }
 
 .footer-links,
 .footer-socials {
-    display: flex; /* Flexbox for links */
+  display: flex; /* Flexbox for links */
 }
 
 .footer-links a,
 .footer-socials a {
- /* Link color */
-    margin: 0 10px; /* Margin between links */
-    text-decoration: none; /* No underline */
-    transition: color 0.3s; /* Smooth color transition */
+  /* Link color */
+  margin: 0 10px; /* Margin between links */
+  text-decoration: none; /* No underline */
+  transition: color 0.3s; /* Smooth color transition */
 }
 
 .footer-links a:hover,
 .footer-socials a:hover {
-    color: #61dafb; /* Change color on hover */
+  color: #61dafb; /* Change color on hover */
 }
 
 .footer-text {
-    text-align: center; /* Centered text */
-    width: 100%; /* Full width */
-    margin-top: 10px; /* Margin for spacing */
+  text-align: center; /* Centered text */
+  width: 100%; /* Full width */
+  margin-top: 10px; /* Margin for spacing */
 }

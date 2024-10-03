@@ -1,13 +1,13 @@
-import React from "react";
-import "./Home.css";
-import { Button } from "@chakra-ui/react";
-import mandapVideo from "../assets/home_video.mp4";
-import couple_image1 from "../assets/couple_image1.webp";
-import couple_image2 from "../assets/couple_image2.webp";
-import couple_image4 from "../assets/couple_image4.webp";
-import chevron_right_icon from "../assets/chevron_right_icon.png";
-import add_icon from "../assets/add_icon.png";
-import {useNavigate} from "react-router-dom";
+import React from 'react';
+import './Home.css';
+import { Button } from '@chakra-ui/react';
+import mandapVideo from '../assets/home_video.mp4';
+import couple_image1 from '../assets/couple_image1.webp';
+import couple_image2 from '../assets/couple_image2.webp';
+import couple_image4 from '../assets/couple_image4.webp';
+import chevron_right_icon from '../assets/chevron_right_icon.png';
+import add_icon from '../assets/add_icon.png';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -47,10 +47,17 @@ const Home = () => {
           </div>
           <div className="home-buttons">
             <Button mt={5} colorScheme="orange" className="home-buttons-fbt">
-              Explore <img width='27' src={chevron_right_icon} alt=">" />
+              Explore <img width="27" src={chevron_right_icon} alt=">" />
             </Button>
-            <Button mt={5} ml={10} colorScheme="gray" onClick={()=>{navigate("/plan-wedding")}}>
-              Plan Wedding <img width='27' src={add_icon} alt="+" />
+            <Button
+              mt={5}
+              ml={10}
+              colorScheme="gray"
+              onClick={() => {
+                navigate('/plan-wedding');
+              }}
+            >
+              Plan Wedding <img width="27" src={add_icon} alt="+" />
             </Button>
           </div>
         </div>

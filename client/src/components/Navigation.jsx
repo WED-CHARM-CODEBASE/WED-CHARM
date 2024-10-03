@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
+import Logo from '../assets/logo.png'
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,8 @@ const Navigation = () => {
     <div className="pre-navbar">
       <nav className="navbar">
         <div className="logo">
-          <Link to="/">Wed Charm</Link>
+        <img width='50' height='50' src={Logo} alt='Logo'/>
+        <Link to="/">Wed Charm</Link>
         </div>
         <div
           className={`menu-icon ${isMenuOpen ? 'open' : ''}`}

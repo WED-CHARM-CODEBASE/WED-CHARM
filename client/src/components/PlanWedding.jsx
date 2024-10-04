@@ -93,6 +93,7 @@ const PlanWedding = () => {
             </label>
             <ReactSelect
               id="entertainment-preferences"
+              className="input"
               isMulti
               options={entertainmentOptions}
               theme={darkTheme}
@@ -124,14 +125,22 @@ const PlanWedding = () => {
           </div>
           <div className="input-field">
             <label htmlFor="ceremony-type">Ceremony Type : </label>
-            <Select id="ceremony-type" placeholder="Please Select">
+            <Select
+              id="ceremony-type"
+              placeholder="Please Select"
+              className="input"
+            >
               <option value="outdoor">Outdoor</option>
               <option value="indoor">Indoor</option>
             </Select>
           </div>
           <div className="input-field">
             <label htmlFor="wedding-theme">Wedding Theme : </label>
-            <Select id="wedding-theme" placeholder="Please Select">
+            <Select
+              id="wedding-theme"
+              placeholder="Please Select"
+              className="input"
+            >
               <option value="classic">Classic</option>
               <option value="modern">Modern</option>
               <option value="traditional">Traditional</option>
@@ -139,7 +148,11 @@ const PlanWedding = () => {
           </div>
           <div className="input-field">
             <label htmlFor="catering-type">Catering Type : </label>
-            <Select id="catering-type" placeholder="Please Select">
+            <Select
+              id="catering-type"
+              placeholder="Please Select"
+              className="input"
+            >
               <option value="buffet">Buffet</option>
               <option value="plate-system">Plate System</option>
             </Select>
@@ -147,7 +160,10 @@ const PlanWedding = () => {
           <div className="input-field">
             <label htmlFor="accommodation-needed">Accomodation Needed : </label>
             <RadioGroup id="accommodation-needed">
-              <Stack direction="row" className="accomodation-needed-stack">
+              <Stack
+                direction="row"
+                className="accomodation-needed-stack input"
+              >
                 <Radio value="yes">Yes</Radio>
                 <Radio value="no">No</Radio>
               </Stack>
@@ -158,7 +174,10 @@ const PlanWedding = () => {
               Trnsportation For Guests :{' '}
             </label>
             <RadioGroup id="transportation-for-guests">
-              <Stack direction="row" className="accomodation-needed-stack">
+              <Stack
+                direction="row"
+                className="accomodation-needed-stack input"
+              >
                 <Radio value="yes">Yes</Radio>
                 <Radio value="no">No</Radio>
               </Stack>

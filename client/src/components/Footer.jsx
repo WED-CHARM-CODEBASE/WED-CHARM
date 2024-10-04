@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <img width="250" height="250" src={Logo} alt="Logo" />
           </div>
-          <div>
+          <div className="ml-10">
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -25,7 +25,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="footer-links">
+          <div className="footer-links ml-10">
             <h2 className="text-dark">Our Team</h2>
             <div className="text-dark d-flex">
               <a
@@ -35,11 +35,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/khushi-chaudhary-01383622b/"
                 style={{ textDecoration: 'none', color: 'black' }} // Optional styling
               >
-                <RiLinkedinFill
-                  color="black"
-                  size={20}
-                  style={{ marginRight: '5px' }}
-                />
+                <RiLinkedinFill size={20} style={{ marginRight: '5px' }} />
                 Khushi Chaudhary
               </a>
             </div>
@@ -51,11 +47,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/nitish-kumar-899086221/"
                 style={{ textDecoration: 'none', color: 'black' }} // Ensures styling consistency
               >
-                <RiLinkedinFill
-                  color="black"
-                  size={20}
-                  style={{ marginRight: '5px' }}
-                />
+                <RiLinkedinFill size={20} style={{ marginRight: '5px' }} />
                 Nitish Kumar
               </a>
             </div>
@@ -63,7 +55,7 @@ const Footer = () => {
         </div>
         <div className="footer-down">
           <div className="text-dark">
-            Wed Charm &copy; 2024, All Rights Reserved.
+            Wed Charm &copy; 2024 | All Rights Reserved.
           </div>
         </div>
       </div>

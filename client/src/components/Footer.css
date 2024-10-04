@@ -1,5 +1,5 @@
 .footer {
-  height: 50vh;
+  min-height: 50vh;
   background-color: rgb(217, 182, 151);
   color: #000;
 }
@@ -37,4 +37,14 @@
 .d-flex {
   display: flex;
   vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+  .footer-up {
+    flex-direction: column;
+    align-items: start;
+  }
+  .ml-10 {
+    margin-left: 10px;
+  }
 }

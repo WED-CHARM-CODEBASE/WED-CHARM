@@ -45,7 +45,9 @@
 .input-field option {
   color: #000;
 }
-
+.heading {
+  text-align: center;
+}
 /* Responsive grid layout for various screen sizes */
 
 /* Mobile: 1 field per row */

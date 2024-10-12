@@ -37,6 +37,14 @@ const weddingPlanSchema = new mongoose.Schema({
     type : String,
     required : true
   },
+  accommodationNeeded :{
+    type : String,
+    required : true
+  },
+  transportationForGuests:{
+    type : String,
+    required : true
+  },
   fullWeddingPlan :{
     type : String,
     required : true

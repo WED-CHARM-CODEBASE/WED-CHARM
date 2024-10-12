@@ -15,6 +15,8 @@ const generateWeddingPlan = async (req, res) => {
     ceremonyType,
     weddingTheme,
     cateringType,
+    accommodationNeeded,
+    transportationForGuests
   } = req.body;
 
   if (!weddingDate || !celebrationDays || !location || !noOfGuests || !budget || !entertainmentChoices || !ceremonyType || !weddingTheme || !cateringType) {
@@ -32,6 +34,8 @@ const generateWeddingPlan = async (req, res) => {
     7. Ceremony Type: ${ceremonyType}
     8. Wedding Theme: ${weddingTheme}
     9. Catering Type: ${cateringType}
+    10. Accomodation Needed :${accommodationNeeded}
+    11. Transportation For Guests : ${transportationForGuests}
   `;
 
   try {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PlanWedding.css';
 import { Input } from '@chakra-ui/react';
 import { Select } from '@chakra-ui/react';
@@ -7,6 +7,30 @@ import ReactSelect from 'react-select';
 import { Button } from '@chakra-ui/react';
 
 const PlanWedding = () => {
+
+  const [planWeddingData , setplanWeddingData] = useState({
+    weddingDate:"",
+    celebrationDays:"",
+    location:"",
+    noOfGuests:"",
+    budget:"",
+    entertainmentChoices:"",
+    ceremonyType:"",
+    weddingTheme:"",
+    cateringType:"",
+    accommodationNeeded :"",
+    transportationForGuests  :""
+  })
+
+  const handleChange = (e)=>{
+    setplanWeddingData({...planWeddingData,[e.target.id]: e.target.value });
+  }
+  console.log(planWeddingData);
+  
+  const handleSubmit = (e) =>{
+
+  }
+
   const entertainmentOptions = [
     { value: 'DJ', label: 'DJ' },
     { value: 'Live Band', label: 'Live Band' },
@@ -40,21 +64,23 @@ const PlanWedding = () => {
           <div className="input-field">
             <label htmlFor="wedding-date">Wedding Date : </label>
             <Input
-              id="wedding-date"
+              id="weddingDate"
               className="input"
               placeholder="Select Date and Time"
               size="md"
               type="date"
+              onChange={handleChange}
             />
           </div>
           <div className="input-field">
             <label htmlFor="celebration-days">No of Celebration Days : </label>
             <Input
-              id="celebration-days"
+              id="celebrationDays"
               className="input"
               placeholder="Enter No of Days"
               size="md"
               type="number"
+              onChange={handleChange}
             />
           </div>
           <div className="input-field">
@@ -65,16 +91,18 @@ const PlanWedding = () => {
               placeholder="Enter Location"
               size="md"
               type="text"
+              onChange={handleChange}
             />
           </div>
           <div className="input-field">
             <label htmlFor="guest-count">No of Guests : </label>
             <Input
-              id="guest-count"
+              id="guestCount"
               className="input"
               placeholder="Enter No of Guests"
               size="md"
               type="number"
+              onChange={handleChange}
             />
           </div>
           <div className="input-field">
@@ -85,6 +113,7 @@ const PlanWedding = () => {
               placeholder="Enter Budget in Rs."
               size="md"
               type="number"
+              onChange={handleChange}
             />
           </div>
           <div className="input-field">
@@ -92,11 +121,12 @@ const PlanWedding = () => {
               Entertainment Preferences :{' '}
             </label>
             <ReactSelect
-              id="entertainment-preferences"
+              id="entertainmentChoices"
               className="input"
               isMulti
               options={entertainmentOptions}
               theme={darkTheme}
+              onChange={handleChange}
               styles={{
                 control: (provided) => ({
                   ...provided,
@@ -126,9 +156,10 @@ const PlanWedding = () => {
           <div className="input-field">
             <label htmlFor="ceremony-type">Ceremony Type : </label>
             <Select
-              id="ceremony-type"
+              id="ceremonyType"
               placeholder="Please Select"
               className="input"
+              onChange={handleChange}
             >
               <option value="outdoor">Outdoor</option>
               <option value="indoor">Indoor</option>
@@ -137,9 +168,10 @@ const PlanWedding = () => {
           <div className="input-field">
             <label htmlFor="wedding-theme">Wedding Theme : </label>
             <Select
-              id="wedding-theme"
+              id="weddingTheme"
               placeholder="Please Select"
               className="input"
+              onChange={handleChange}
             >
               <option value="classic">Classic</option>
               <option value="modern">Modern</option>
@@ -149,9 +181,10 @@ const PlanWedding = () => {
           <div className="input-field">
             <label htmlFor="catering-type">Catering Type : </label>
             <Select
-              id="catering-type"
+              id="cateringType"
               placeholder="Please Select"
               className="input"
+              onChange={handleChange}
             >
               <option value="buffet">Buffet</option>
               <option value="plate-system">Plate System</option>
@@ -159,10 +192,11 @@ const PlanWedding = () => {
           </div>
           <div className="input-field">
             <label htmlFor="accommodation-needed">Accomodation Needed : </label>
-            <RadioGroup id="accommodation-needed">
+            <RadioGroup id="accommodationNeeded">
               <Stack
                 direction="row"
                 className="accomodation-needed-stack input"
+                onChange={handleChange}
               >
                 <Radio value="yes">Yes</Radio>
                 <Radio value="no">No</Radio>
@@ -171,12 +205,13 @@ const PlanWedding = () => {
           </div>
           <div className="input-field">
             <label htmlFor="transportation-for-guests">
-              Trnsportation For Guests :{' '}
+              Transportation For Guests :{' '}
             </label>
-            <RadioGroup id="transportation-for-guests">
+            <RadioGroup id="transportationForGuests">
               <Stack
                 direction="row"
                 className="accomodation-needed-stack input"
+                onChange={handleChange}
               >
                 <Radio value="yes">Yes</Radio>
                 <Radio value="no">No</Radio>
@@ -184,7 +219,7 @@ const PlanWedding = () => {
             </RadioGroup>
           </div>
         </form>
-        <Button mt={10} mb={10} colorScheme="orange">
+        <Button mt={10} mb={10} colorScheme="orange" onClick={handleSubmit}>
           Generate Plan
         </Button>
       </div>

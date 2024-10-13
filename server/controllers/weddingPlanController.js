@@ -24,24 +24,37 @@ const generateWeddingPlan = async (req, res) => {
   }
 
   const prompt = `
-    Create a detailed wedding itinerary for a couple with the following information:
-    1. Wedding Date: ${weddingDate}
-    2. Celebration Days: ${celebrationDays}
-    3. Location: ${location}
-    4. Number of Guests: ${noOfGuests}
-    5. Budget: Rs. ${budget}
-    6. Entertainment Choices: ${entertainmentChoices.join(", ")}
-    7. Ceremony Type: ${ceremonyType}
-    8. Wedding Theme: ${weddingTheme}
-    9. Catering Type: ${cateringType}
-    10. Accomodation Needed :${accommodationNeeded}
-    11. Transportation For Guests : ${transportationForGuests}
+    You are a professional wedding planner. Please create a detailed 3-day wedding itinerary based on the following details:
+    
+    Wedding Date: ${weddingDate}
+    Celebration Days: ${celebrationDays}
+    Location: ${location}
+    Number of Guests: ${noOfGuests}
+    Budget: Rs. ${budget}
+    Entertainment: ${entertainmentChoices.join(", ")}
+    Ceremony Type: ${ceremonyType}
+    Wedding Theme: ${weddingTheme}
+    Catering: ${cateringType}
+    Accommodation Needed: ${accommodationNeeded}
+    Transportation for Guests: ${transportationForGuests}
+
+    Please create a detailed itinerary (html) including:
+
+    1. Schedule of events for each day (morning, afternoon, evening)
+    2. Meal plans and catering details
+    3. Entertainment activities
+    4. Guest transportation arrangements
+    5. Venue setup for different events (e.g., ceremony, reception)
   `;
 
   try {
     const response = await hf.textGeneration({
-      model: 'gpt2',
+      model: 'bigscience/bloom', // Switch to a more capable model
       inputs: prompt,
+      parameters: {
+        max_new_tokens: 1000,  // Increased token limit for detailed response
+        temperature: 0.7,      // Adjust for creativity
+      }
     });
 
     const weddingPlan = response.generated_text;

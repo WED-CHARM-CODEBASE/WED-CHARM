@@ -14,7 +14,7 @@ const PlanWedding = () => {
     location:"",
     noOfGuests:"",
     budget:"",
-    entertainmentChoices:"",
+    entertainmentChoices:[],
     ceremonyType:"",
     weddingTheme:"",
     cateringType:"",
@@ -25,10 +25,13 @@ const PlanWedding = () => {
   const handleChange = (e)=>{
     setplanWeddingData({...planWeddingData,[e.target.id]: e.target.value });
   }
-  console.log(planWeddingData);
+  const handleSelectChange = (e) => {
+    const selectedValues = e.map(option => option.value); // Extract values from selected options
+    setplanWeddingData({ ...planWeddingData, entertainmentChoices: selectedValues });
+  };
   
   const handleSubmit = (e) =>{
-
+console.log(planWeddingData);
   }
 
   const entertainmentOptions = [
@@ -126,7 +129,7 @@ const PlanWedding = () => {
               isMulti
               options={entertainmentOptions}
               theme={darkTheme}
-              onChange={handleChange}
+              onChange={handleSelectChange}
               styles={{
                 control: (provided) => ({
                   ...provided,

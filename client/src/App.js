@@ -10,10 +10,11 @@ import PlanWedding from './components/PlanWedding';
 import Support from './components/Support';
 
 function App() {
+  const appName = "Wed Charm";
   return (
     <ChakraProvider>
       <BrowserRouter>
-        <Navigation />
+        <Navigation name = {appName} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

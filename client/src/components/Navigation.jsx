@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Navigation.css';
 import Logo from '../assets/logo.png';
 
-const Navigation = () => {
+const Navigation = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,7 +15,7 @@ const Navigation = () => {
       <nav className="navbar">
         <div className="logo">
           <img width="50" height="50" src={Logo} alt="Logo" />
-          <Link to="/">Wed Charm</Link>
+          <Link to="/">{props.name}</Link>
         </div>
         <div
           className={`menu-icon ${isMenuOpen ? 'open' : ''}`}

@@ -7,32 +7,47 @@ import ReactSelect from 'react-select';
 import { Button } from '@chakra-ui/react';
 
 const PlanWedding = () => {
+  const [planWeddingData, setplanWeddingData] = useState({
+    weddingDate: '',
+    celebrationDays: '',
+    location: '',
+    noOfGuests: '',
+    budget: '',
+    entertainmentChoices: [],
+    ceremonyType: '',
+    weddingTheme: '',
+    cateringType: '',
+    accommodationNeeded: '',
+    transportationForGuests: '',
+  });
 
-  const [planWeddingData , setplanWeddingData] = useState({
-    weddingDate:"",
-    celebrationDays:"",
-    location:"",
-    noOfGuests:"",
-    budget:"",
-    entertainmentChoices:[],
-    ceremonyType:"",
-    weddingTheme:"",
-    cateringType:"",
-    accommodationNeeded :"",
-    transportationForGuests  :""
-  })
-
-  const handleChange = (e)=>{
-    setplanWeddingData({...planWeddingData,[e.target.id]: e.target.value });
-  }
+  const handleChange = (e) => {
+    setplanWeddingData({ ...planWeddingData, [e.target.id]: e.target.value });
+  };
   const handleSelectChange = (e) => {
-    const selectedValues = e.map(option => option.value); // Extract values from selected options
-    setplanWeddingData({ ...planWeddingData, entertainmentChoices: selectedValues });
+    const selectedValues = e.map((option) => option.value); // Extract values from selected options
+    setplanWeddingData({
+      ...planWeddingData,
+      entertainmentChoices: selectedValues,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    //console.log(planWeddingData); // Check data
+    try {
+      const res = await fetch("/api/plan/generate-wedding-plan", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(planWeddingData),
+      });
+      const response = await res.json();
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
   };
   
-  const handleSubmit = (e) =>{
-console.log(planWeddingData);
-  }
 
   const entertainmentOptions = [
     { value: 'DJ', label: 'DJ' },
@@ -100,7 +115,7 @@ console.log(planWeddingData);
           <div className="input-field">
             <label htmlFor="guest-count">No of Guests : </label>
             <Input
-              id="guestCount"
+              id="noOfGuests"
               className="input"
               placeholder="Enter No of Guests"
               size="md"
@@ -195,11 +210,18 @@ console.log(planWeddingData);
           </div>
           <div className="input-field">
             <label htmlFor="accommodation-needed">Accomodation Needed : </label>
-            <RadioGroup id="accommodationNeeded">
+            <RadioGroup
+              id="accommodationNeeded"
+              onChange={(value) =>
+                setplanWeddingData({
+                  ...planWeddingData,
+                  accommodationNeeded: value,
+                })
+              }
+            >
               <Stack
                 direction="row"
                 className="accomodation-needed-stack input"
-                onChange={handleChange}
               >
                 <Radio value="yes">Yes</Radio>
                 <Radio value="no">No</Radio>
@@ -210,11 +232,18 @@ console.log(planWeddingData);
             <label htmlFor="transportation-for-guests">
               Transportation For Guests :{' '}
             </label>
-            <RadioGroup id="transportationForGuests">
+            <RadioGroup
+              id="transportationForGuests"
+              onChange={(value) =>
+                setplanWeddingData({
+                  ...planWeddingData,
+                  transportationForGuests: value,
+                })
+              }
+            >
               <Stack
                 direction="row"
                 className="accomodation-needed-stack input"
-                onChange={handleChange}
               >
                 <Radio value="yes">Yes</Radio>
                 <Radio value="no">No</Radio>

@@ -1,12 +1,6 @@
-const { HfInference } = require('@huggingface/inference');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 const dotenv = require('dotenv');
-const {
-  GoogleGenerativeAI,
-  HarmCategory,
-  HarmBlockThreshold,
-} = require('@google/generative-ai');
 dotenv.config();
-
 
 const generateWeddingPlan = async (req, res) => {
   const {
@@ -23,49 +17,51 @@ const generateWeddingPlan = async (req, res) => {
     transportationForGuests,
   } = req.body;
 
+  // Validate input fields
   if (
     !weddingDate ||
     !celebrationDays ||
     !location ||
     !noOfGuests ||
     !budget ||
-    !entertainmentChoices ||
+    !entertainmentChoices.length ||
     !ceremonyType ||
     !weddingTheme ||
-    !cateringType
+    !cateringType ||
+    accommodationNeeded === '' ||
+    transportationForGuests === ''
   ) {
-    return res
-      .status(400)
-      .json({ success: false, message: 'All fields are required.' });
+    return res.status(400).json({
+      success: false,
+      message: 'All fields are required.',
+    });
   }
 
   const prompt = `
-    
 Create a comprehensive wedding itinerary based on the following details:
-    
-    - Wedding Date: ${weddingDate}
-    - Celebration Days: ${celebrationDays}
-    - Location: ${location}
-    - Number of Guests: ${noOfGuests}
-    - Budget: ${budget}
-    - Entertainment Choices: ${entertainmentChoices.join(', ')}
-    - Ceremony Type: ${ceremonyType}
-    - Wedding Theme: ${weddingTheme}
-    - Catering Type: ${cateringType}
-    - Accommodation Needed: ${accommodationNeeded ? 'Yes' : 'No'}
-    - Transportation for Guests: ${transportationForGuests ? 'Yes' : 'No'}
-    
-    The itinerary should include an overview, a day-by-day schedule, guest information, budget breakdown, catering details, entertainment schedule, and decor implementation in JSON format.
-    `;
+
+- Wedding Date: ${weddingDate}
+- Celebration Days: ${celebrationDays}
+- Location: ${location}
+- Number of Guests: ${noOfGuests}
+- Budget: ${budget}
+- Entertainment Choices: ${entertainmentChoices.join(', ')}
+- Ceremony Type: ${ceremonyType}
+- Wedding Theme: ${weddingTheme}
+- Catering Type: ${cateringType}
+- Accommodation Needed: ${accommodationNeeded ? 'Yes' : 'No'}
+- Transportation for Guests: ${transportationForGuests ? 'Yes' : 'No'}
+
+The itinerary should include an overview, a day-by-day schedule, guest information, budget breakdown, catering details, entertainment schedule, and decor implementation in JSON format.
+  `;
 
   try {
     const apiKey = process.env.GEMINI_API_KEY;
     const genAI = new GoogleGenerativeAI(apiKey);
 
-    const model = genAI.getGenerativeModel({
+    const model = await genAI.getGenerativeModel({
       model: 'gemini-1.5-pro',
     });
-
 
     const generationConfig = {
       temperature: 1,
@@ -75,28 +71,20 @@ Create a comprehensive wedding itinerary based on the following details:
       responseMimeType: 'application/json',
     };
 
-    async function run() {
-      const chatSession = model.startChat({
-        generationConfig,
-
-        history: [],
-      });
-
-      const result = await chatSession.sendMessage(prompt);
-      
-      res.status(200).json({
-        data : result.response
+    const chatSession = model.startChat({
+      generationConfig,
+      history: [],
     });
-    }
 
-    run();
+    const result = await chatSession.sendMessage(prompt);
 
-   
-
-   
+    return res.status(200).json({
+      success: true,
+      data: result.response || 'No response received from the AI',
+    });
   } catch (error) {
-    console.error('Error generating wedding plan');
-    res.status(500).json({
+    console.error('Error generating wedding plan:', error);
+    return res.status(500).json({
       success: false,
       message: 'Failed to generate wedding plan. Please try again.',
     });

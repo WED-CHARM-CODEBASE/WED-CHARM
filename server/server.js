@@ -3,6 +3,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const weddingPlanRouter = require("./routes/weddingPlanRoutes");
+const cors = require('cors');
+
 
 // important calls
 const app = express();
@@ -13,6 +15,7 @@ const PORT = process.env.PORT || 8000;
 const HOST = process.env.HOST;
 const MONGO_URL = process.env.MONGO_URL;
 app.use(express.json());
+app.use(cors());
 app.use("/api/plan" , weddingPlanRouter);
 
 
